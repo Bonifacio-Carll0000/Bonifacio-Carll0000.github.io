@@ -1,0 +1,44 @@
+:root {
+    --bg: #0f172a;
+    --card: #1e293b;
+    --text: #f8fafc;
+    --accent: #38bdf8;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 10%;
+    align-items: center;
+}
+
+nav ul { display: flex; list-style: none; gap: 20px; }
+nav a { color: var(--text); text-decoration: none; font-weight: bold; }
+
+header {
+    text-align: center;
+    padding: 80px 10%;
+}
+
+h1 { font-size: 3rem; margin-bottom: 10px; }
+.subtitle { font-size: 1.2rem; color: var(--accent); }
+
+section { padding: 40px 10%; }
+
+.award-item {
+    background: var(--card);
+    padding: 20px;
+    border-left: 4px solid var(--accent);
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+footer { text-align: center; padding: 40px; font-size: 0.8rem; opacity: 0.5; }
