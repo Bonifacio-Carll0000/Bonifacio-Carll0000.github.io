@@ -1,44 +1,112 @@
 :root {
-    --bg: #0f172a;
-    --card: #1e293b;
-    --text: #f8fafc;
-    --accent: #38bdf8;
+    --bg: #050505;
+    --card: #111111;
+    --text: #ffffff;
+    --accent: #00d2ff;
+    --highlight: #3a7bd5;
 }
 
 body {
     background-color: var(--bg);
     color: var(--text);
     font-family: 'Inter', sans-serif;
-    line-height: 1.6;
     margin: 0;
+    overflow-x: hidden;
+}
+
+.highlight {
+    background: linear-gradient(90deg, var(--accent), var(--highlight));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 nav {
     display: flex;
     justify-content: space-between;
-    padding: 2rem 10%;
+    padding: 1.5rem 10%;
     align-items: center;
+    border-bottom: 1px solid #222;
 }
 
-nav ul { display: flex; list-style: none; gap: 20px; }
-nav a { color: var(--text); text-decoration: none; font-weight: bold; }
+.cta-mini {
+    background: var(--accent);
+    padding: 8px 15px;
+    border-radius: 5px;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+}
 
-header {
+.hero {
     text-align: center;
-    padding: 80px 10%;
+    padding: 100px 10%;
 }
 
-h1 { font-size: 3rem; margin-bottom: 10px; }
-.subtitle { font-size: 1.2rem; color: var(--accent); }
+.badge {
+    border: 1px solid var(--accent);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: var(--accent);
+}
 
-section { padding: 40px 10%; }
+h1 { font-size: 3.5rem; line-height: 1.2; margin: 20px 0; }
 
-.award-item {
+.btn-primary {
+    background: linear-gradient(45deg, var(--accent), var(--highlight));
+    padding: 15px 35px;
+    border-radius: 30px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    box-shadow: 0 10px 20px rgba(0, 210, 255, 0.3);
+}
+
+/* Marquee Animation */
+.marquee {
+    background: #111;
+    padding: 15px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    border-top: 1px solid #222;
+    border-bottom: 1px solid #222;
+}
+
+.marquee-content {
+    display: inline-block;
+    animation: scroll 20s linear infinite;
+}
+
+.marquee span {
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding-right: 50px;
+    color: #555;
+}
+
+@keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 40px 10%;
+}
+
+.card {
     background: var(--card);
-    padding: 20px;
-    border-left: 4px solid var(--accent);
-    margin-bottom: 15px;
-    border-radius: 8px;
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid #222;
+    transition: 0.3s;
 }
 
-footer { text-align: center; padding: 40px; font-size: 0.8rem; opacity: 0.5; }
+.card:hover { border-color: var(--accent); transform: translateY(-5px); }
+
+.level { color: var(--accent); font-size: 0.8rem; font-weight: bold; text-transform: uppercase; }
+
+footer { text-align: center; padding: 50px; opacity: 0.4; }
